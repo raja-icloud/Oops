@@ -1,7 +1,7 @@
 import users.Staff;
 import users.Student;
 
-public class Main {
+public class AccessModifier {
     public static void main(String[] args) {
         Staff s1 = new Staff();
 
