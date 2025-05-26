@@ -1,40 +1,132 @@
-interface Calculator {
-    public abstract int add(int a, int b);
-    public abstract int sub(int a, int b);
-    public abstract int mul(int a, int b);
+// Raja
+interface ATM {
+    public abstract void withdraw();
+    public abstract void balance();
+    public abstract void trasfer();    
+}
+
+interface Test {
+    public abstract void print();
+}
+
+interface AdvanceATM extends ATM, Test {
+    public abstract void depoist();
+    public abstract void NRITransfer();
+}
+
+// Team One (US)
+class SbiAtm implements ATM, AdvanceATM {
+
+    public void test() {
+        // 
+    }
+
+    @Override
+    public void balance() {
+        System.out.println("Balance checking by SBI ATM");
+    }
+
+    @Override
+    public void trasfer() {
+       System.out.println("Balance trasfered by SBI ATM");
+    }
+
+    @Override
+    public void withdraw() {
+        System.out.println("Amount taken by SBI ATM");
+    }
+
+    @Override
+    public void NRITransfer() {
+        System.out.println("NRI trasfer completed by SBI ATM");
+    }
+
+    @Override
+    public void depoist() {
+        System.out.println("Amount deposited by SBI ATM");
+    }
+
+    @Override
+    public void print() {
+       System.out.println("test method");
+    }
+
+}
+
+// Team One (Singapore)
+class CanaraAtm  implements ATM, AdvanceATM {
+
+    @Override
+    public void balance() {
+         System.out.println("Balance checking by Canara ATM");
+    }
+
+    @Override
+    public void trasfer() {
+        System.out.println("Balance trasfered by Canara ATM"); 
+    }
+
+    @Override
+    public void withdraw() {
+        System.out.println("Amount taken by Canara ATM");
+    }
+
+        @Override
+    public void NRITransfer() {
+        System.out.println("NRI trasfer completed by Canara ATM");
+    }
+
+    @Override
+    public void depoist() {
+        System.out.println("Amount deposited by Carana ATM");
+    }
+
+    @Override
+    public void print() {
+        // TODO Auto-generated method stub
+        
+    }
 }
 
 
-class Casio implements Calculator {
-    public int add(int a, int b) {
-        return a + b;
-    }
-    public int sub(int a, int b) {
-        return a - b;
-    }
-    public int mul(int a, int b) {
-        return a * b;
-    }
-}
-
-class Philips  implements Calculator {
-    public int add(int a, int b) {
-        return a + b;
-    }
-    public int sub(int a, int b) {
-        return a - b;
-    }
-    public int mul(int a, int b) {
-        return a * b;
-    }
-}
 
 public class InterfaceConcept {
     public static void main(String[] args) {
-        Calculator casio = new Casio();
-        System.out.println("Addition by casio :" + casio.add(10, 20));
+        SbiAtm sbi = new SbiAtm();
+        sbi.test();
 
-        Calculator philips = new Philips();
-        System.out.println("Addition by philips :" + philips.add(10, 20));
+        ATM sbiAtm = new SbiAtm();
+        sbiAtm.balance();
+        sbiAtm.trasfer();
+        sbiAtm.withdraw();
+
+        ATM canaraATM = new CanaraAtm();
+        canaraATM.balance();
+        canaraATM.trasfer();
+        canaraATM.withdraw();
+    
+
+        AdvanceATM  avdSbiAtm = new SbiAtm();
+        avdSbiAtm.balance();
+        avdSbiAtm.trasfer();
+        avdSbiAtm.withdraw();
+        avdSbiAtm.depoist();
+        avdSbiAtm.NRITransfer();
+
+        AdvanceATM  avdCanaraAtm = new CanaraAtm();
+        avdCanaraAtm.balance();
+        avdCanaraAtm.trasfer();
+        avdCanaraAtm.withdraw();
+        avdCanaraAtm.depoist();
+        avdCanaraAtm.NRITransfer();
     }
 }
+
+// inteface means just method declaration
+// what are the classes implements the interface, which is responsible to write the definition
+// one class can EXTEND another only one class
+// one interface can EXTEND another multiple interfaces
+// on class can IMPLEMENT another multiple interfaces
+
+
+
