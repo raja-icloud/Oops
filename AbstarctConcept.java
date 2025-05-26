@@ -2,31 +2,20 @@
 
 
 abstract class SbiATM  {
-    public abstract void balance();
-    public abstract void transfer();
-    public abstract void deposit();
+    String name = "";
+    public abstract void balance(String accountNumber); // method decalration
+
+    public void test() { // self metthod with definition    
+    }
 }
 
 class SBITeam  extends SbiATM {
-
+    
     @Override
-    public void balance() {
+    public void balance(String accountNumber) { // method defintion of parent (interface)
         // TODO Auto-generated method stub
         
     }
-
-    @Override
-    public void deposit() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void transfer() {
-        // TODO Auto-generated method stub
-        
-    }
-
 }
 
 
